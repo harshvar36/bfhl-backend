@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { validateInput } = require('./middleware/validation');
-const { processBfhl } = require('./controllers/bfhlController');
+const { validateInput } = require('validation');
+const { processBfhl } = require('bfhlController');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -38,5 +38,6 @@ app.use('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
 module.exports = app;
